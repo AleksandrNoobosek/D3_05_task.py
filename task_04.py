@@ -1,6 +1,5 @@
-def Compression(text): # алгоритм сжатия
+def Compression(text): 
     compresdata = ''
-
     i = 0
     while i < len(text):
         count = 1
@@ -9,29 +8,22 @@ def Compression(text): # алгоритм сжатия
             i += 1
         compresdata += str(count) + text[i]
         i += 1
-    
     return compresdata
-
-
-def Recovery(text): # алгоритм восстановления
+def Recovery(text): 
     datarecovery = ''
-
     i = 0
     while i < len(text):
         datarecovery += str(text[i+1]) * int(text[i])
         i+=2
-    
     return datarecovery
-
-
-with open('myfile1.txt', 'r') as t1: # открытие исходного файла
+with open('myfile1.txt', 'r') as t1: 
     t1 = t1.read()    
 
-with open('myfile2.txt', 'w+') as t2: # запись сжатого файла
+with open('myfile2.txt', 'w+') as t2: 
     t2.write(Compression(t1))
     t2.seek(0)                     
     t2 = t2.read()
  
-with open('myfile3.txt', 'w') as t3: # открытие восстановленного исходного файла 
+with open('myfile3.txt', 'w') as t3: 
     t3.write(Recovery(t2))
     
