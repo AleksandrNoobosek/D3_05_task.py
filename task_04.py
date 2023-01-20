@@ -9,6 +9,8 @@ def Compression(text):
         compresdata += str(count) + text[i]
         i += 1
     return compresdata
+
+
 def Recovery(text): 
     datarecovery = ''
     i = 0
@@ -16,6 +18,8 @@ def Recovery(text):
         datarecovery += str(text[i+1]) * int(text[i])
         i+=2
     return datarecovery
+
+
 with open('myfile1.txt', 'r') as t1: 
     t1 = t1.read()    
 
